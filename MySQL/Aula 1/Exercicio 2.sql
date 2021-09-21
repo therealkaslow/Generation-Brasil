@@ -1,0 +1,1 @@
+SELECT * FROM vary.produtos;
