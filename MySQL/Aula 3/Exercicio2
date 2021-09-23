@@ -1,0 +1,24 @@
+/*Crie um banco de dados para um serviço de pizzaria de uma empresa, o nome do banco
+deverá ter o seguinte nome db_pizzaria_legal, onde o sistema trabalhará com as
+informações dos produtos desta empresa.*/
+create database db_pizzaria_legal;
+
+use database db_pizzaria_legal;
+
+/*O sistema trabalhará com 2 tabelas tb_pizza e tb_categoria.*/
+
+create table tb_pizza(
+pizza_id bigint auto_increment not null,
+pizza_sabor varchar(30) not null,
+primary key (pizza_id)
+);
+
+create table tb_categoria(
+categoria_id int auto_increment not null,
+tipo_pizza varchar(30) not null,
+tamanho_pizza varchar(30) not null,
+sabor_pizza varchar (30) not null,
+fk_classe int,
+primary key (categoria_id),
+foreign key (fk_classe) references tb_pizza (pizza_id)
+);
